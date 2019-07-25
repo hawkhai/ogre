@@ -1600,6 +1600,14 @@ namespace Ogre {
         static_cast<ParticleSystem*>(target)->setNonVisibleUpdateTimeout(
             StringConverter::parseReal(val));
     }
+
+    void ParticleSystem::attachObjectTo(SceneNode* sceneNode) {
+        if (sceneNode == NULL) {
+            return;
+        }
+        sceneNode->attachObject(this);
+    }
+
    //-----------------------------------------------------------------------
     ParticleAffector::~ParticleAffector() 
     {

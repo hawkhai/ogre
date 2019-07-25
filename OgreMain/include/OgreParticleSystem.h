@@ -878,6 +878,9 @@ namespace Ogre {
                 they are rebuild in the regular process flow.
         */
         void _notifyReorganiseEmittedEmitterData (void);
+
+    public:
+        void attachObjectTo(SceneNode* sceneNode);
     };
     /** @} */
     /** @} */
