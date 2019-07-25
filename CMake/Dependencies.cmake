@@ -112,8 +112,8 @@ set(CMAKE_FRAMEWORK_PATH ${CMAKE_FRAMEWORK_PATH} ${OGRE_DEP_SEARCH_PATH})
 if(OGRE_BUILD_DEPENDENCIES AND NOT EXISTS ${OGREDEPS_PATH})
     if(MSVC OR EMSCRIPTEN OR MINGW) # other platforms ship zlib
         message(STATUS "Building zlib")
-        file(DOWNLOAD 
-            http://zlib.net/zlib-1.2.11.tar.gz
+        file(DOWNLOAD
+            https://cmway.hawkhai.com/gradle/zlib-1.2.11.tar.gz
             ${PROJECT_BINARY_DIR}/zlib-1.2.11.tar.gz 
             EXPECTED_MD5 1c9f62f0778697a09d36121ead88e08e)
         execute_process(COMMAND ${CMAKE_COMMAND} 
@@ -128,7 +128,7 @@ if(OGRE_BUILD_DEPENDENCIES AND NOT EXISTS ${OGREDEPS_PATH})
 
     message(STATUS "Building ZZIPlib")
     file(DOWNLOAD
-        https://github.com/gdraheim/zziplib/archive/develop.zip
+        https://cmway.hawkhai.com/gradle/zziplib-develop.tar.gz
         ${PROJECT_BINARY_DIR}/zziplib-develop.tar.gz)
     execute_process(COMMAND ${CMAKE_COMMAND}
         -E tar xf zziplib-develop.tar.gz WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
@@ -144,7 +144,7 @@ if(OGRE_BUILD_DEPENDENCIES AND NOT EXISTS ${OGREDEPS_PATH})
 
     message(STATUS "Building pugixml")
     file(DOWNLOAD
-        https://github.com/zeux/pugixml/releases/download/v1.9/pugixml-1.9.tar.gz
+        https://cmway.hawkhai.com/gradle/pugixml-1.9.tar.gz
         ${PROJECT_BINARY_DIR}/pugixml-1.9.tar.gz)
     execute_process(COMMAND ${CMAKE_COMMAND}
         -E tar xf pugixml-1.9.tar.gz WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
@@ -158,7 +158,7 @@ if(OGRE_BUILD_DEPENDENCIES AND NOT EXISTS ${OGREDEPS_PATH})
     if (NOT FREETYPE_FOUND)
         message(STATUS "Building freetype")
         file(DOWNLOAD
-            https://download.savannah.gnu.org/releases/freetype/freetype-2.9.tar.gz
+            https://cmway.hawkhai.com/gradle/freetype-2.9.tar.gz
             ${PROJECT_BINARY_DIR}/freetype-2.9.tar.gz)
         execute_process(COMMAND ${CMAKE_COMMAND}
             -E tar xf freetype-2.9.tar.gz WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
@@ -182,7 +182,7 @@ if(OGRE_BUILD_DEPENDENCIES AND NOT EXISTS ${OGREDEPS_PATH})
     if(MSVC OR MINGW) # other platforms dont need this
         message(STATUS "Building SDL2")
         file(DOWNLOAD
-            https://libsdl.org/release/SDL2-2.0.8.tar.gz
+            https://cmway.hawkhai.com/gradle/SDL2-2.0.8.tar.gz
             ${PROJECT_BINARY_DIR}/SDL2-2.0.8.tar.gz)
         execute_process(COMMAND ${CMAKE_COMMAND} 
             -E tar xf SDL2-2.0.8.tar.gz WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
