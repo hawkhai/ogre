@@ -74,8 +74,8 @@ void ApplicationContextAndroid::_fireInputEventAndroid(AInputEvent* event, int w
         Ogre::RenderWindow* win = getRenderWindow();
 
         evt.tfinger.fingerId = AMotionEvent_getPointerId(event, 0);
-        evt.tfinger.x = AMotionEvent_getRawX(event, 0) / win->getWidth();
-        evt.tfinger.y = AMotionEvent_getRawY(event, 0) / win->getHeight();
+        evt.tfinger.x = AMotionEvent_getX(event, 0) / win->getWidth();
+        evt.tfinger.y = AMotionEvent_getY(event, 0) / win->getHeight();
 
         if(evt.type == FINGERMOTION) {
             if(evt.tfinger.fingerId != lastTouch.fingerId)
